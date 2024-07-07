@@ -13,17 +13,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->string("employee_cd", 20)->primary()->comment("社員コード");
+            $table->string("employee_cd", 8)->primary()->comment("社員コード");
             $table->string("employee_name", 60)->comment("社員名");
             $table->string("kana", 60)->comment("ふりがな");
             $table->string("email", 150)->comment("メールアドレス");
             $table->string("password", 255)->comment("パスワード");
             $table->string("tel", 15)->nullable()->comment("連絡先");
             $table->string("department_cd", 20)->nullable()->comment("所属部門コード");
-            $table->string("post", 20)->nullable()->comment("役職");
-            $table->tinyInteger("authority")->nullable()->comment("権限");
-            $table->tinyInteger("employment_status")->nullable()->comment("雇用形態");
-            $table->tinyInteger("incumbency_status")->nullable()->comment("在職区分");
+            $table->string("post", 50)->nullable()->comment("役職");
+            $table->string("authority", 50)->nullable()->comment("権限");
+            $table->string("employment_status", 50)->nullable()->comment("雇用形態");
+            $table->string("incumbency_status", 50)->nullable()->comment("在職区分");
             $table->timestamp("login_at")->nullable()->comment("ログイン日時");
             $table->tinyInteger("failure_count")->nullable()->comment("ログイン失敗回数");
             $table->timestamp("locked_at")->nullable()->comment("ロック日時");

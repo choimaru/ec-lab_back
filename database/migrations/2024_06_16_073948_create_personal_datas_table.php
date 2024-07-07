@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('personal_datas', function (Blueprint $table) {
-            $table->string("employee_cd", 20)->primary()->comment("社員コード");
+            $table->string("employee_cd", 8)->primary()->comment("社員コード");
             $table->tinyInteger("gender")->nullable()->comment("性別");
             $table->string("birthday", 10)->nullable()->comment("生年月日");
             $table->string("zip_code", 8)->nullable()->comment("郵便番号");
